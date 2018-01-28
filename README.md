@@ -1,18 +1,18 @@
-## Kubernetes demo running on Raspberry Pi Cluster
+# Kubernetes demo running on Raspberry Pi Cluster
 
 The purpose of this repository is to demostrate a pipeline of being able to locally build and deploy to a local k8s (Kubernetes) cluster and then deploy to a 5 node Raspberry Pi Cluster running k8s.
 
-# Requirements:
+## Requirements:
   * Code must run cross platform - (NodeJS and .NET Core)
   * Code must be able to run both on x86 and ARM (NodeJS and .NET Core)
   * Application should demonstrate a Microservices Architecture
   * State persistence must also be contained within the cluster (Database, Key/Value, Memory Stores)
   
-# Current Application Artifacts:
+## Current Application Artifacts:
   * Inventory Web front end - (JavaScript Services WeatherForecast)
   * Inventory API - (JavaScript Services SampleDataController only)
   
-# Goals:
+## Goals:
   * Setup basic project
   * Build Raspberry Pi 3 Cluster - waiting on equipment (Pis, Network Switch, USB Hub 60W)
   * Install k8s on Pi Cluster - (1 master / 4 workers)
