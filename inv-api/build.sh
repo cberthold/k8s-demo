@@ -7,4 +7,4 @@ dotnet restore
 dotnet build
 
 # build docker image
-docker build --tag inv-api . 
+docker build --tag k8spidemo/inv-api . 
