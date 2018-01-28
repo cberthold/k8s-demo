@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -34,6 +35,9 @@ namespace inv_api
                 app.UseDeveloperExceptionPage();
             }
 
+            // add CORS for everyone - TODO: pass this in ENV
+            app.UseCors(option =>option.AllowAnyOrigin()); 
+            
             app.UseMvc();
         }
     }
