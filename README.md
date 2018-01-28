@@ -24,3 +24,11 @@ The purpose of this repository is to demostrate a pipeline of being able to loca
   * Setup load balancing using nginx
   * Try integrating some sort of service mesh control and data plane for the side car model (istio or linkerd?)
   
+## Things I want to learn:
+  * How do I work with docker + k8s in a local environment?
+  * How does hybrid development with local vs k8s-only work?
+  * Can I use local docker repository without having to deploy to docker repository?
+   * If not will local k8s version work?
+  * How do I debug RPi cluster?
+  * How much overhead will k8s add to RPi?
+  
