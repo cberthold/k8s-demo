@@ -1,6 +1,7 @@
 import { fetch, addTask } from 'domain-task';
 import { Action, Reducer, ActionCreator } from 'redux';
 import { AppThunkAction } from './';
+import Constants from '../Constants';
 
 // -----------------
 // STATE - This defines the type of data maintained in the Redux store.
@@ -41,11 +42,16 @@ type KnownAction = RequestWeatherForecastsAction | ReceiveWeatherForecastsAction
 // ACTION CREATORS - These are functions exposed to UI components that will trigger a state transition.
 // They don't directly mutate state, but they can have external side-effects (such as loading data).
 
+const requestInit: RequestInit =
+{
+    mode: 'no-cors',
+}
+
 export const actionCreators = {
     requestWeatherForecasts: (startDateIndex: number): AppThunkAction<KnownAction> => (dispatch, getState) => {
         // Only load data if it's something we don't already have (and are not already loading)
         if (startDateIndex !== getState().weatherForecasts.startDateIndex) {
-            let fetchTask = fetch(`api/SampleData/WeatherForecasts?startDateIndex=${ startDateIndex }`)
+            let fetchTask = fetch(Constants.inventoryBaseUrl + `SampleData/WeatherForecasts?startDateIndex=${ startDateIndex }`)
                 .then(response => response.json() as Promise<WeatherForecast[]>)
                 .then(data => {
                     dispatch({ type: 'RECEIVE_WEATHER_FORECASTS', startDateIndex: startDateIndex, forecasts: data });
