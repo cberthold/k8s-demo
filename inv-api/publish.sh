@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# publish docker image
+docker push k8spidemo/inv-api
